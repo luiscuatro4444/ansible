@@ -1,0 +1,10 @@
+- name: Print vars
+  hosts: localhost
+  tasks:
+    - name: include vault
+      ansible.builtin.include_vars:
+        file: vault.yml
+
+    - name: print variable
+      ansible.builtin.debug:
+        var: vault_ansible_become_pass
